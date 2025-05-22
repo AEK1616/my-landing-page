@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdelkader | Frontend Developer</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>  
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#6366f1',secondary:'#4f46e5'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      
+    </style>
+</head>
+<body class="bg-white transition-colors duration-300">
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+    
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-outer" id="customCursorOuter"></div>
+    
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 w-full bg-white bg-opacity-95 shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-['Pacifico'] text-primary">Tadj</a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-300 relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-300 relative group">
+                    Skills
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#projects" class="text-gray-700 hover:text-primary transition-colors duration-300 relative group">
+                    Projects
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300 relative group">
+                    Contact
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="theme-switch" id="themeSwitch">
+                    <div class="theme-switch-handle"></div>
+                </div>
+                
+                <div class="md:hidden hamburger" id="hamburgerMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 flex flex-col p-8" id="mobileMenu">
+        <div class="flex justify-end mb-8">
+            <button class="text-gray-700 hover:text-primary" id="closeMenu">
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <i class="ri-close-line ri-lg"></i>
+                </div>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-6">
+            <a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-300">Home</a>
+            <a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
+            <a href="#projects" class="text-gray-700 hover:text-primary transition-colors duration-300">Projects</a>
+            <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+        </nav>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative pt-20 overflow-hidden">
+        <div class="particles" id="particles"></div>
+        <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 typewriter">Hello, I'm Tadj Abdelkader </h1>
+                <h2 class="text-xl md:text-2xl lg:text-3xl text-gray-600 mb-8 fade-in">Frontend Developer & UI/UX Enthusiast</h2>
+                <p class="text-gray-600 mb-8 max-w-lg mx-auto md:mx-0 fade-in">I craft beautiful, responsive, and interactive web experiences using modern technologies and best practices.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start fade-in">
+                    <a href="#projects" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center">
+                        View My Work
+                        <div class="w-5 h-5 ml-2 flex items-center justify-center">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+                    <a href="#contact" class="border-2 border-primary text-primary px-6 py-3 !rounded-button whitespace-nowrap hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center">
+                        Contact Me
+                        <div class="w-5 h-5 ml-2 flex items-center justify-center">
+                            <i class="ri-mail-line"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+                  <div class="md:w-1/2 flex justify-center">
+              <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary shadow-xl transform transition-transform duration-500 hover:scale-105 hover:rotate-3">
+                <img src="myphoto" alt="Tadj Abdelkader smiling and looking at the camera in a well-lit modern workspace with a calm and welcoming atmosphere" class="w-full h-full object-cover object-center mb-4">
+              </div>
+          </div>
+
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-primary bounce">
+            <div class="w-10 h-10 flex items-center justify-center">
+                <i class="ri-arrow-down-line ri-2x"></i>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative">
+                <span class="relative z-10">Skills & Technologies</span>
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary"></span>
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-white p-6 rounded shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-html5-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">HTML5</h3>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="skill-bar bg-primary h-full rounded-full" style="--width: 95%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-css3-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">CSS3</h3>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="skill-bar bg-primary h-full rounded-full" style="--width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-javascript-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">JavaScript</h3>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="skill-bar bg-primary h-full rounded-full" style="--width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-reactjs-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">React</h3>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="skill-bar bg-primary h-full rounded-full" style="--width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-vuejs-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Vue.js</h3>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="skill-bar bg-primary h-full rounded-full" style="--width: 75%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-tailwind-css-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Tailwind CSS</h3>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="skill-bar bg-primary h-full rounded-full" style="--width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-nodejs-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Node.js</h3>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="skill-bar bg-primary h-full rounded-full" style="--width: 70%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                        <i class="ri-git-branch-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Git</h3>
+                    <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                        <div class="skill-bar bg-primary h-full rounded-full" style="--width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-center mb-8">Specialized Skills</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-flip h-64">
+                    <div class="card-front bg-white p-6 rounded shadow-md flex flex-col items-center justify-center">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center text-primary">
+                            <i class="ri-responsive-line ri-3x"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Responsive Design</h3>
+                        <p class="text-gray-600 text-center">Creating fluid layouts that work on any device</p>
+                    </div>
+                    <div class="card-back bg-primary p-6 rounded shadow-md flex flex-col items-center justify-center text-white">
+                        <h3 class="text-lg font-semibold mb-4">Responsive Design</h3>
+                        <ul class="text-sm space-y-2">
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Mobile-first approach
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Fluid grid layouts
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Media queries mastery
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Flexible images
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card-flip h-64">
+                    <div class="card-front bg-white p-6 rounded shadow-md flex flex-col items-center justify-center">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center text-primary">
+                            <i class="ri-speed-up-line ri-3x"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Performance Optimization</h3>
+                        <p class="text-gray-600 text-center">Building fast and efficient web applications</p>
+                    </div>
+                    <div class="card-back bg-primary p-6 rounded shadow-md flex flex-col items-center justify-center text-white">
+                        <h3 class="text-lg font-semibold mb-4">Performance Optimization</h3>
+                        <ul class="text-sm space-y-2">
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Code splitting
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Asset optimization
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Lazy loading
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Caching strategies
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card-flip h-64">
+                    <div class="card-front bg-white p-6 rounded shadow-md flex flex-col items-center justify-center">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center text-primary">
+                            <i class="ri-magic-line ri-3x"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Animation & Interaction</h3>
+                        <p class="text-gray-600 text-center">Creating engaging user experiences</p>
+                    </div>
+                    <div class="card-back bg-primary p-6 rounded shadow-md flex flex-col items-center justify-center text-white">
+                        <h3 class="text-lg font-semibold mb-4">Animation & Interaction</h3>
+                        <ul class="text-sm space-y-2">
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                CSS animations
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                GSAP library
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Micro-interactions
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                Scroll animations
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative">
+                <span class="relative z-10">Project Showcase</span>
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary"></span>
+            </h2>
+            
+            <div class="flex flex-wrap justify-center mb-10">
+                <button class="project-filter m-2 px-6 py-2 !rounded-button whitespace-nowrap bg-primary text-white hover:bg-opacity-90 transition-all duration-300" data-filter="all">All Projects</button>
+                <button class="project-filter m-2 px-6 py-2 !rounded-button whitespace-nowrap bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-300" data-filter="web">Web Apps</button>
+                <button class="project-filter m-2 px-6 py-2 !rounded-button whitespace-nowrap bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-300" data-filter="mobile">Mobile</button>
+                <button class="project-filter m-2 px-6 py-2 !rounded-button whitespace-nowrap bg-gray-200 text-gray-700 hover:bg-gray-300 transition-all duration-300" data-filter="ui">UI/UX</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:scale-105" data-category="web">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20dashboard%20with%20clean%20UI%2C%20product%20listings%2C%20shopping%20cart%2C%20beautiful%20interface%20design%2C%20high%20quality%20screenshot%20of%20web%20application%2C%20professional%20UI%20design&width=600&height=400&seq=2&orientation=landscape" alt="E-commerce Platform" class="w-full h-full object-cover object-top transition-transform duration-1000 hover:scale-110">
+                        <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 text-sm">Web App</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A full-featured online store with cart, checkout, and payment integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Stripe</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Live Demo</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Source Code</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-github-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:scale-105" data-category="mobile">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=fitness%20tracking%20mobile%20app%20UI%20with%20workout%20tracking%2C%20statistics%2C%20and%20progress%20charts%2C%20clean%20modern%20interface%20on%20smartphone%20screen%2C%20professional%20UI%20design&width=600&height=400&seq=3&orientation=landscape" alt="Fitness Tracker App" class="w-full h-full object-cover object-top transition-transform duration-1000 hover:scale-110">
+                        <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 text-sm">Mobile</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Fitness Tracker App</h3>
+                        <p class="text-gray-600 mb-4">Mobile application for tracking workouts, nutrition, and fitness progress.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">React Native</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Firebase</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Redux</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Charts</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>App Store</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-apple-fill"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Google Play</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-google-play-fill"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:scale-105" data-category="ui">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=dashboard%20UI%20design%20for%20financial%20analytics%20platform%20with%20charts%2C%20graphs%2C%20data%20visualization%2C%20modern%20clean%20interface%2C%20professional%20UI%20design&width=600&height=400&seq=4&orientation=landscape" alt="Financial Dashboard" class="w-full h-full object-cover object-top transition-transform duration-1000 hover:scale-110">
+                        <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 text-sm">UI/UX</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Financial Dashboard</h3>
+                        <p class="text-gray-600 mb-4">Interactive dashboard for tracking investments and financial analytics.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Figma</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">D3.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">API</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Case Study</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-file-list-line"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Prototype</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-eye-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:scale-105" data-category="web">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=task%20management%20web%20application%20with%20kanban%20board%2C%20task%20cards%2C%20progress%20tracking%2C%20clean%20modern%20interface%2C%20professional%20UI%20design&width=600&height=400&seq=5&orientation=landscape" alt="Task Management System" class="w-full h-full object-cover object-top transition-transform duration-1000 hover:scale-110">
+                        <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 text-sm">Web App</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Management System</h3>
+                        <p class="text-gray-600 mb-4">Collaborative project management tool with Kanban boards and task tracking.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Angular</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Firebase</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">RxJS</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Live Demo</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-external-link-line"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Source Code</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-github-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:scale-105" data-category="mobile">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=travel%20booking%20mobile%20app%20UI%20with%20destination%20search%2C%20hotel%20listings%2C%20flight%20booking%2C%20clean%20modern%20interface%20on%20smartphone%20screen%2C%20professional%20UI%20design&width=600&height=400&seq=6&orientation=landscape" alt="Travel Booking App" class="w-full h-full object-cover object-top transition-transform duration-1000 hover:scale-110">
+                        <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 text-sm">Mobile</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Travel Booking App</h3>
+                        <p class="text-gray-600 mb-4">Mobile app for booking flights, hotels, and planning travel itineraries.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Flutter</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Dart</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">GraphQL</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Maps API</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>App Store</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-apple-fill"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Google Play</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-google-play-fill"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:scale-105" data-category="ui">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=music%20streaming%20application%20UI%20design%20with%20playlist%20management%2C%20music%20player%2C%20artist%20profiles%2C%20clean%20modern%20interface%2C%20professional%20UI%20design&width=600&height=400&seq=7&orientation=landscape" alt="Music Streaming Platform" class="w-full h-full object-cover object-top transition-transform duration-1000 hover:scale-110">
+                        <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 text-sm">UI/UX</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Music Streaming Platform</h3>
+                        <p class="text-gray-600 mb-4">UI/UX design for a music streaming service with playlist management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Adobe XD</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Illustrator</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Prototyping</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">User Testing</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Case Study</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-file-list-line"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 flex items-center">
+                                <span>Prototype</span>
+                                <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                    <i class="ri-eye-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all duration-300 inline-flex items-center">
+                    View All Projects
+                    <div class="w-5 h-5 ml-2 flex items-center justify-center">
+                        <i class="ri-arrow-right-line"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Timeline Section -->
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative">
+                <span class="relative z-10">Get In Touch</span>
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <p class="text-gray-600 mb-8">Feel free to reach out to me for collaboration, job opportunities, or just to say hello!</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 mr-4 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Location</h4>
+                                <p class="text-gray-600">Bordj El Kiffan, SNTR, Algiers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 mr-4 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Email</h4>
+                                <p class="text-gray-600">abdoutadj457@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 mr-4 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">Phone</h4>
+                                <p class="text-gray-600">+213696590258</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-semibold text-gray-800 mb-4">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/abdelkader-tadj-51ab5829a/" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all duration-300">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="https://github.com/AEK1616" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all duration-300">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                            <a href="https://www.facebook.com/abdou.tadj.102" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all duration-300">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="https://www.instagram.com/le.tdjj/" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-all duration-300">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <form id="contactForm" class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+                        
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                            <div class="relative">
+                                <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                                <input type="text" id="name" class="w-full px-10 py-3 border-none bg-gray-50 rounded focus:ring-2 focus:ring-primary input-animation" placeholder="Type your name">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                            <div class="relative">
+                                <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <input type="email" id="email" class="w-full px-10 py-3 border-none bg-gray-50 rounded focus:ring-2 focus:ring-primary input-animation" placeholder="email@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                            <div class="relative">
+                                <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                                    <i class="ri-chat-1-line"></i>
+                                </div>
+                                <input type="text" id="subject" class="w-full px-10 py-3 border-none bg-gray-50 rounded focus:ring-2 focus:ring-primary input-animation" placeholder="Project Inquiry">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                            <div class="relative">
+                                <div class="absolute left-3 top-4 text-gray-400">
+                                    <i class="ri-message-2-line"></i>
+                                </div>
+                                <textarea id="message" rows="5" class="w-full px-10 py-3 border-none bg-gray-50 rounded focus:ring-2 focus:ring-primary input-animation" placeholder="Hello, I'd like to talk about..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" id="submitButton" class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center">
+                            <span>Send Message</span>
+                            <div class="w-5 h-5 ml-2 flex items-center justify-center">
+                                <i class="ri-send-plane-line"></i>
+                            </div>
+                        </button>
+                        
+                        <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded">
+                            <div class="flex items-center">
+                                <div class="w-5 h-5 mr-2 flex items-center justify-center">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span>Your message has been sent successfully!</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 block">Tadj</a>
+                    <p class="text-gray-400 mb-6">Creating beautiful and functional web experiences that make a difference.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/abdelkader-tadj-51ab5829a/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </div>
+                        </a>
+                        <a href="https://github.com/AEK1616" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-github-fill"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.facebook.com/abdou.tadj.102" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/le.tdjj/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-300">Skills</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Consulting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Code Review</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to receive updates on new projects and articles.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l border-none text-gray-800 focus:outline-none">
+                        <button type="submit" class="bg-primary text-white px-4 py-2 rounded-r !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-all duration-300">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-send-plane-line"></i>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 Tadj Abdelkader. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="#" id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <div class="w-6 h-6 flex items-center justify-center">
+            <i class="ri-arrow-up-line"></i>
+        </div>
+    </a>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Loading screen
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.style.opacity = '0';
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 1500);
+
+            // Custom cursor
+            const cursor = document.getElementById('customCursor');
+            const cursorOuter = document.getElementById('customCursorOuter');
+
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursorOuter.style.left = e.clientX + 'px';
+                cursorOuter.style.top = e.clientY + 'px';
+            });
+
+            document.addEventListener('mousedown', function() {
+                cursor.style.width = '15px';
+                cursor.style.height = '15px';
+                cursorOuter.style.width = '30px';
+                cursorOuter.style.height = '30px';
+            });
+
+            document.addEventListener('mouseup', function() {
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+                cursorOuter.style.width = '40px';
+                cursorOuter.style.height = '40px';
+            });
+
+            // Hamburger menu
+            const hamburger = document.getElementById('hamburgerMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMenu = document.getElementById('closeMenu');
+
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            closeMenu.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+
+            // Mobile menu links
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+
+            // Theme switch
+            const themeSwitch = document.getElementById('themeSwitch');
+            const body = document.body;
+            // Load theme from localStorage
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark');
+                themeSwitch.classList.add('dark');
+            }
+            themeSwitch.addEventListener('click', function() {
+                body.classList.toggle('dark');
+                themeSwitch.classList.toggle('dark');
+                if (body.classList.contains('dark')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+
+            // Scroll animations
+            const scrollElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+
+            const elementInView = (el, percentageScroll = 100) => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementHeight = el.getBoundingClientRect().height;
+
+                return (
+                    elementTop <= 
+                    ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100))
+                );
+            };
+
+            const displayScrollElement = (element) => {
+                element.classList.add('slide-in-active');
+            };
+
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 85)) {
+                        displayScrollElement(el);
+                    }
+                });
+            };
+
+            // Timeline progress
+            const timelineProgress = document.getElementById('timelineProgress');
+            const timelineSection = document.getElementById('experience');
+
+            const updateTimelineProgress = () => {
+                if (!timelineProgress || !timelineSection) return;
+                const sectionTop = timelineSection.offsetTop;
+                const sectionHeight = timelineSection.offsetHeight;
+                const scrollPosition = window.scrollY;
+                const windowHeight = window.innerHeight;
+
+                if (scrollPosition > sectionTop - windowHeight/2 && 
+                    scrollPosition < sectionTop + sectionHeight - windowHeight/2) {
+                    const scrollPercentage = (scrollPosition - (sectionTop - windowHeight/2)) / 
+                                           (sectionHeight);
+                    timelineProgress.style.height = Math.min(100, scrollPercentage * 100) + '%';
+                }
+            };
+
+            // Progress bar
+            const progressBar = document.getElementById('progressBar');
+
+            const updateProgressBar = () => {
+                const scrollPosition = window.scrollY;
+                const totalHeight = document.body.scrollHeight - window.innerHeight;
+                const progress = (scrollPosition / totalHeight) * 100;
+                progressBar.style.width = progress + '%';
+            };
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+
+            const toggleBackToTopButton = () => {
+                if (window.scrollY > 300) {
+                    backToTop.style.opacity = '1';
+                    backToTop.style.visibility = 'visible';
+                } else {
+                    backToTop.style.opacity = '0';
+                    backToTop.style.visibility = 'hidden';
+                }
+            };
+
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Project filtering
+            const projectFilters = document.querySelectorAll('.project-filter');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    // Update active filter
+                    projectFilters.forEach(f => {
+                        f.classList.remove('bg-primary', 'text-white');
+                        f.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    this.classList.remove('bg-gray-200', 'text-gray-700');
+                    this.classList.add('bg-primary', 'text-white');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            const submitButton = document.getElementById('submitButton');
+            const successMessage = document.getElementById('successMessage');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Show loading state
+                submitButton.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>';
+
+                // Simulate form submission
+                setTimeout(() => {
+                    submitButton.innerHTML = '<span>Send Message</span><div class="w-5 h-5 ml-2 flex items-center justify-center"><i class="ri-send-plane-line"></i></div>';
+                    successMessage.classList.remove('hidden');
+                    contactForm.reset();
+
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                    }, 5000);
+                }, 1500);
+            });
+
+            // Particles animation
+            const particles = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const animationDuration = Math.random() * 20 + 10;
+                const animationDelay = Math.random() * 10;
+
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = posX + '%';
+                particle.style.top = posY + '%';
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particle.style.animation = `float ${animationDuration}s ease-in-out ${animationDelay}s infinite alternate`;
+
+                particles.appendChild(particle);
+            }
+
+            // Initialize all scroll-based animations
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+                updateTimelineProgress();
+                updateProgressBar();
+                toggleBackToTopButton();
+            });
+
+            // Trigger once on load
+            handleScrollAnimation();
+            updateTimelineProgress();
+            updateProgressBar();
+            toggleBackToTopButton();
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Star click effect in home section
+            const homeSection = document.getElementById('home');
+            homeSection.addEventListener('click', (e) => {
+                // إنشاء عنصر النجمة
+                const star = document.createElement('div');
+                star.classList.add('star');
+
+                // تحديد موقع النقر داخل العنصر (نطرح نص عرض النجمة عشان تتوضع بالمنتصف)
+                const rect = homeSection.getBoundingClientRect();
+                const x = e.clientX - rect.left - 10; // 10 = نصف عرض النجمة
+                const y = e.clientY - rect.top - 10;  // 10 = نصف ارتفاع النجمة
+
+                star.style.left = `${x}px`;
+                star.style.top = `${y}px`;
+
+                homeSection.appendChild(star);
+
+                // حذف النجمة بعد انتهاء الأنيميشن (1 ثانية)
+                star.addEventListener('animationend', () => {
+                    star.remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
